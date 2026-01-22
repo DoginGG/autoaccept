@@ -23,32 +23,11 @@ Automatyczne akceptowanie zaproszeń do meczów w Counter-Strike 2. Program wykr
 
 ## 🚀 Instalacja
 
-### Opcja 1: Instalator (Zalecane)
 1. Pobierz `AutoAccept-Setup.exe` z [Releases](https://github.com/DoginGG/autoaccept/releases)
 2. Uruchom instalator
 3. Program zainstaluje się do `C:\Users\[Twoja nazwa]\AppData\Local\AutoAccept\`
 
-### Opcja 2: Portable (bez instalacji)
-1. Pobierz `AutoAccept-Update.zip` z [Releases](https://github.com/DoginGG/autoaccept/releases)
-2. Rozpakuj gdzie chcesz
-3. Uruchom `AutoAccept.exe`
-
-### Opcja 3: Z źródeł (Dla developerów)
-```powershell
-git clone https://github.com/DoginGG/autoaccept.git
-cd autoaccept
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python autoaccept.py
-```
-
-## 📖 Jak używać
-
-1. **Przygotuj obrazy szablonów:**
-   - Zrób zrzut ekranu przycisku "Akceptuj" i zapisz jako `akceptuj.png`
-   - Zrób zrzut ekranu tła gry i zapisz jako `csgame.png`
-   - Umieść oba pliki w folderze z programem
+1. **Program posiada już wbudowane obrazy szablonów** - Nie musisz nic dodawać
 
 2. **Konfiguracja (opcjonalnie):**
    - **Pewność Akceptuj** (50-95%) - Jak pewny program ma być że znalazł przycisk
@@ -65,16 +44,7 @@ python autoaccept.py
 4. **Zatrzymaj:**
    - Kliknij przycisk **Stop** aby wstrzymać skanowanie
 
-## 🔧 Kalibracja
-
-Jeśli program nie znajduje przycisku:
-
-1. **Zmniejsz pewność** - Ustaw na 50-60% zamiast 70%
-2. **Zmień rozmiar obrazu** - Upewnij się że zrzut ekranu ma odpowiedni rozmiar
-3. **Dodaj więcej tła** - Na zrzęcie ekranu powinno być więcej otoczenia wokół przycisku
-4. **Oświetlenie** - Zrób zrzut w warunkach zbliżonych do rzeczywistych
-
-## 🔄 Aktualizacje
+##  Aktualizacje
 
 Program posiada wbudowany system aktualizacji:
 
@@ -98,19 +68,6 @@ Program posiada wbudowany system aktualizacji:
 - Sprawdź połączenie internetowe
 - Spróbuj ręcznie pobrać z GitHub Releases
 
-## 📝 Changelog
-
-### v1.0.0 (2026-01-22)
-- Pierwsza publiczna wersja
-- Automatyczne akceptowanie meczy
-- Statystyki sesji
-- System aktualizacji
-- Zapis konfiguracji
-
-## 📄 Licencja
-
-MIT License - Możesz używać, modyfikować i rozpowszechniać ten program
-
 ## 🤝 Wsparcie
 
 Jeśli napotkasz problem:
@@ -132,12 +89,4 @@ Ten program jest narzędziem automatyzacji dla Twojej wygody. Używaj go odpowie
 - Jeśli wykrywanie jest zbyt czułe lub zbyt słabe, dostosuj suwakiem próg pewności (oddzielnie dla przycisku i ekranu gry).
 - Zmniejszenie interwału skanowania przyspiesza reakcję kosztem obciążenia CPU.
 - Upewnij się, że obrazy `akceptuj.png` i `csgame.png` pasują do Twojej rozdzielczości/DPI.
-- `ESC` lub przesunięcie myszy w lewy górny róg ekranu zatrzymuje kliknięcia (PyAutoGUI FAILSAFE).
-
-## Pakowanie do EXE (opcjonalnie)
-```powershell
-pip install pyinstaller
-pyinstaller --onefile --add-data "akceptuj.png;." --add-data "csgame.png;." autoaccept.py
-```
-
-Po zbudowaniu exe umieść obrazy w pakiecie (dystrybucji) lub korzystaj z dołączonych zasobów PyInstaller.
+- `ESC` lub przesunięcie myszy w lewy górny róg ekranu zatrzymuje kliknięcia.
